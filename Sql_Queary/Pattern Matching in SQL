@@ -1,0 +1,15 @@
+select * 
+from emp
+where ename like 'M%'
+
+select * 
+from emp
+where ename like '%M'
+
+select * 
+from emp
+where ename like '%m%'
+
+select * 
+from emp
+where ename like '_a%'
