@@ -1,0 +1,25 @@
+--- using Max function
+select maxz(sal)
+from emp
+where sal<(select max(sal) from emp)
+
+---using limit and offset
+select distinct sal
+from emp
+order by sal desc
+limit 1 offset 1
+
+--- using dence rank 
+with cte as (select sal, dence_rank() over(order by sal desc) as rnk
+from emp)
+
+select sal
+from cte
+where rnk=2
+
+--- using row number
+with cte as ( select sal, row_number() over( order by sal desc) as rnk from emp) as rn
+
+select sal
+from cte
+where rn=2
