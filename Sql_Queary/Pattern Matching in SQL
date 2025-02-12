@@ -17,3 +17,13 @@ where ename like '_a%'
 select * 
 from emp
 where ename not like '%m%'
+
+select * 
+from emp
+where ename like '____'
+
+select *
+from emp
+where ename like '_L_M%'
+
+
