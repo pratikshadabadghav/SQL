@@ -1,0 +1,4 @@
+--- using group by
+select dept_no,count(*)
+from emp
+group by dept_no
