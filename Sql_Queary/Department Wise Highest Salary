@@ -1,0 +1,13 @@
+--- using group by 
+select dept_no,max(sal)
+from emp
+group by dept_no
+
+---using dence_rank
+with cte as (
+select dept_no,sal,dence_rank() over( partion by dept_no oder by sal desc) as rnk
+from emp)
+
+select dept_no,sal
+from cte
+where rnk=1
