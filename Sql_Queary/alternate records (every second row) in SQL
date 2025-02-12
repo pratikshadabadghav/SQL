@@ -1,0 +1,20 @@
+---using mod function
+
+select * 
+from emp
+where mod(emp_id,2)==1
+
+---using row_number()
+
+with cte as (select *,row_number() over(order by emp_id) as rn
+from emp)
+
+select *
+from cte
+where rn%2==1
+
+---using limit and offset
+
+select * from emp limit 1 offset 1;
+select * from emp limit 1 offset 3;
+select * from emp limit 1 offset 5;
