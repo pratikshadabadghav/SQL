@@ -1,0 +1,10 @@
+---Display first 4th Rows in SQL
+
+with cte as (select *,row_number() over(order by emp_id) as rn
+from emp)
+
+select & from cte
+where rn<=4
+
+select * from emp
+where emp_id not in (select emp_id from emp)
