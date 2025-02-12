@@ -1,0 +1,15 @@
+--- using group by and count
+
+select ename,count(*)
+from emp
+group by ename
+having count(*)>1
+
+----using with
+
+select * from emp
+where enmae in( 
+select ename 
+from emp 
+group by ename 
+having count(*)>1)
